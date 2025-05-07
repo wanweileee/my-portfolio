@@ -1,7 +1,11 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/project-img1.png";
-// import colorSharp2 from "../assets/img/color-sharp2.png";
+import SaveSmart from "../assets/savesmart.png";
+import Mosquito from "../assets/mosquito.png";
+import TAP from "../assets/tap.png";
+import CC from "../assets/cc.png";
+import bank from "../assets/bank.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -9,34 +13,34 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
+      title: "AI Training Simulator",
+      description: "Design & Development",
+      imgUrl: CC,
+    },
+    {
+      title: "Traffic Accident Hotspot Prediction",
+      description: "Design & Development",
+      imgUrl: TAP,
+    },
+    {
+      title: "SaveSmart",
+      description: "Design & Development",
+      imgUrl: SaveSmart,
+    },
+    {
+      title: "Sentiment Analysis",
       description: "Design & Development",
       imgUrl: projImg1,
     },
     {
-      title: "Business Startup",
+      title: "Bank Account Application",
       description: "Design & Development",
-      imgUrl: projImg1,
+      imgUrl: bank,
     },
     {
-      title: "Business Startup",
+      title: "Product Design",
       description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      imgUrl: Mosquito,
     },
   ];
 

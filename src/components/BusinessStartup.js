@@ -1,5 +1,5 @@
 // components/BusinessStartup.js
-import projImg1 from "../assets/project-img1.png";
+import SaveSmart from "../assets/savesmart.png";
 
 export const BusinessStartup = () => {
   return (
@@ -7,7 +7,7 @@ export const BusinessStartup = () => {
       <h2>Business Startup</h2>
       <p>This is a dedicated project page for the Business Startup project.</p>
       <img
-        src={projImg1}
+        src={SaveSmart}
         alt="Business Startup"
         style={{ maxWidth: "100%", height: "auto", marginTop: "1rem" }}
       />
