@@ -50,13 +50,18 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="#"><img src={navIcon1} alt="" /></a>
-                <a href="#"><img src={navIcon2} alt="" /></a>
+                <a href="https://www.linkedin.com/in/leewanwei" target="_blank" rel="noopener noreferrer">
+                  <img src={navIcon1} alt="LinkedIn" />
+                </a>
+                <a href="https://github.com/wanweileee" target="_blank" rel="noopener noreferrer">
+                  <img src={navIcon2} alt="GitHub" />
+                </a>
               </div>
-              <HashLink to='#connect'>
+              <a href="https://www.linkedin.com/in/leewanwei" target="_blank" rel="noopener noreferrer">
                 <button className="vvd"><span>Let’s Connect</span></button>
-              </HashLink>
+              </a>
             </span>
+
           </Navbar.Collapse>
         </Container>
       </Navbar>

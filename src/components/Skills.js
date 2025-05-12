@@ -25,13 +25,10 @@ export const Skills = () => {
 
   const experience = [
     {
-      title: "Product Management Intern — XYZ",
-      desc: "Led UI prototyping for a mental health app",
+      title: "AI Automation Engineer — CyberG7",
+      desc: "Automate Business Process and Marketing",
     },
-    {
-      title: "AI Research Assistant — SUTD",
-      desc: "Worked on RAG chatbot models for learning",
-    },
+
   ];
 
   const renderCards = (items) =>

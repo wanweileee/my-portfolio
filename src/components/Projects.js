@@ -17,9 +17,8 @@ export const Projects = () => {
       description: "Design & Development",
       imgUrl: CC,
       tags: [
-        { label: "PHP", color: "#8854d0", textColor: "#fff" },
-        { label: "MySQL", color: "#00b894", textColor: "#fff" },
-        { label: "HTML/CSS", color: "#ff9f43", textColor: "#fff" }
+        { label: "Next.Js", color: "#8854d0", textColor: "#fff" },
+        { label: "FastAPI", color: "#00b894", textColor: "#fff" },
       ],
       links: [
         { label: "🌐 Website", url: "https://yourlink.com" }
@@ -29,26 +28,54 @@ export const Projects = () => {
       title: "Traffic Accident Hotspot Prediction",
       description: "Design & Development",
       imgUrl: TAP,
+      tags: [
+        { label: "Pytorch", color: "#ff9f43", textColor: "#fff" }
+      ],
+      links: [
+        { label: "🌐 Website", url: "https://yourlink.com" }
+      ]
     },
     {
       title: "SaveSmart",
       description: "Design & Development",
       imgUrl: SaveSmart,
+       tags: [
+        { label: "Flask", color: "#8854d0", textColor: "#fff" },
+      ],
+      links: [
+        { label: "🌐 Website", url: "https://yourlink.com" }
+      ]
     },
     {
       title: "Sentiment Analysis",
       description: "Design & Development",
       imgUrl: projImg1,
+      tags: [
+        { label: "Web Scrapping", color: "#8854d0", textColor: "#fff" },
+        { label: "HuggingFace", color: "#ffde21", textColor: "#fff" },
+      ],
+      links: [
+        { label: "🌐 Website", url: "https://yourlink.com" }
+      ]
     },
     {
       title: "Bank Account Application",
       description: "Design & Development",
       imgUrl: bank,
+      tags: [
+        { label: "Ruby on Rails", color: "#ff2c2c", textColor: "#fff" },
+      ],
+      links: [
+        { label: "🌐 Website", url: "https://yourlink.com" }
+      ]
     },
     {
       title: "Product Design",
       description: "Design & Development",
       imgUrl: Mosquito,
+      links: [
+        { label: "🌐 Website", url: "https://yourlink.com" }
+      ]
     },
   ];
 
@@ -61,7 +88,7 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>Each project reflects my hands-on experience, problem-solving approach, and commitment to building thoughtful, user-centric solutions , driven by lack of sleep.</p>
                       <Row>
                         {
                           projects.map((project, index) => {
