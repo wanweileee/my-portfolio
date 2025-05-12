@@ -16,6 +16,14 @@ export const Projects = () => {
       title: "AI Training Simulator",
       description: "Design & Development",
       imgUrl: CC,
+      tags: [
+        { label: "PHP", color: "#8854d0", textColor: "#fff" },
+        { label: "MySQL", color: "#00b894", textColor: "#fff" },
+        { label: "HTML/CSS", color: "#ff9f43", textColor: "#fff" }
+      ],
+      links: [
+        { label: "🌐 Website", url: "https://yourlink.com" }
+      ]
     },
     {
       title: "Traffic Accident Hotspot Prediction",
