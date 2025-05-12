@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/my-portfolio/static/css/main.9ce0f78b.css",
+    "main.js": "/my-portfolio/static/js/main.2874c257.js",
+    "static/js/453.acca0757.chunk.js": "/my-portfolio/static/js/453.acca0757.chunk.js",
+    "static/media/savesmart.png": "/my-portfolio/static/media/savesmart.16aafe2690e6dd253721.png",
+    "static/media/cc.png": "/my-portfolio/static/media/cc.a88f80c1f6c8c1f19540.png",
+    "static/media/tap.png": "/my-portfolio/static/media/tap.f84c8dac87e0aac20a31.png",
+    "static/media/bank.png": "/my-portfolio/static/media/bank.78245c489e6f065ffe9e.png",
+    "static/media/mosquito.png": "/my-portfolio/static/media/mosquito.3252836da0959fa688f7.png",
+    "static/media/banner-bg.jpg": "/my-portfolio/static/media/banner-bg.87a791f3ed320886a0d4.jpg",
+    "static/media/kuromi.svg": "/my-portfolio/static/media/kuromi.cd0df6aa37ea5dc1ac7a23283378bf60.svg",
+    "static/media/revicons.eot": "/my-portfolio/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/my-portfolio/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/my-portfolio/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/nav-icon1.svg": "/my-portfolio/static/media/nav-icon1.417e97e8b4919c6724674d253204af1b.svg",
+    "static/media/nav-icon2.svg": "/my-portfolio/static/media/nav-icon2.255db585f8a0eb28a1e4deb91bde207d.svg",
+    "index.html": "/my-portfolio/index.html",
+    "main.9ce0f78b.css.map": "/my-portfolio/static/css/main.9ce0f78b.css.map",
+    "main.2874c257.js.map": "/my-portfolio/static/js/main.2874c257.js.map",
+    "453.acca0757.chunk.js.map": "/my-portfolio/static/js/453.acca0757.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ce0f78b.css",
+    "static/js/main.2874c257.js"
+  ]
+}
