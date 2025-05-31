@@ -32,7 +32,7 @@ export const Projects = () => {
         { label: "Pytorch", color: "#ff9f43", textColor: "#fff" }
       ],
       links: [
-        { label: "🌐 Website", url: "https://yourlink.com" }
+        { label: "🌐 Github", url: "https://github.com/wanweileee/traffic-accidents.git" }
       ]
     },
     {

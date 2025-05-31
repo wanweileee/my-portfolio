@@ -11,8 +11,8 @@ export const Skills = () => {
 
   const skills = [
     { title: "Web Development", desc: "Frontend & Backend" },
-    { title: "Brand Identity", desc: "Visual strategy & tone" },
-    { title: "Logo Design", desc: "Custom branding assets" },
+    { title: "Automation", desc: "No/Low Code PLatforms (Zapier/Make)" },
+    { title: "RAG", desc: "Retrival-Arugmented Generation" },
     { title: "AI/ML Model Dev", desc: "NLP, CV, Transformers" },
   ];
 
@@ -27,6 +27,10 @@ export const Skills = () => {
     {
       title: "AI Automation Engineer — CyberG7",
       desc: "Automate Business Process and Marketing",
+    },
+     {
+      title: "AI Engineer — TiltGuard",
+      desc: "Develop AI solutions",
     },
 
   ];
