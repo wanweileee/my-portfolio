@@ -66,7 +66,7 @@ export const Projects = () => {
         { label: "Ruby on Rails", color: "#ff2c2c", textColor: "#fff" },
       ],
       links: [
-        { label: "🌐 Website", url: "https://yourlink.com" }
+        { label: "🌐 Website", url: "https://sites.google.com/view/next-gen-ai/home" }
       ]
     },
     {
@@ -74,7 +74,7 @@ export const Projects = () => {
       description: "Design & Development",
       imgUrl: Mosquito,
       links: [
-        { label: "🌐 Website", url: "https://yourlink.com" }
+        { label: "🌐 Website", url: "https://www.canva.com/design/DAGpHbnb2Yo/6SnoPQcdLuiiG7W4okd9WQ/view?utm_content=DAGpHbnb2Yo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb02cc5571f" }
       ]
     },
   ];
@@ -88,7 +88,7 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <p>Each project reflects my hands-on experience, problem-solving approach, and commitment to building thoughtful, user-centric solutions , driven by lack of sleep.</p>
+                <p></p>
                       <Row>
                         {
                           projects.map((project, index) => {

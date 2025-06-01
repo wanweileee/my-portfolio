@@ -19,7 +19,7 @@ export const Skills = () => {
   const education = [
     {
       title: "Singapore University of Technology and Design",
-      desc: "Year 3 — Design & Artificial Intelligence",
+      desc: "Design & Artificial Intelligence",
     },
   ];
 
