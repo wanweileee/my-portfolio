@@ -43,7 +43,7 @@ export const Projects = () => {
         { label: "Flask", color: "#8854d0", textColor: "#fff" },
       ],
       links: [
-        { label: "🌐 Website", url: "https://yourlink.com" }
+        { label: "🌐 Website", url: "https://wanweileee.github.io/savesmart" }
       ]
     },
     {
