@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
+import { aboutme } from "./components/aboutme";
 import { Banner } from "./components/Banner";
 import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
@@ -19,6 +20,7 @@ function App() {
             element={
               <>
                 <Banner />
+                <aboutme />
                 <Skills />
                 <Projects />
               </>
