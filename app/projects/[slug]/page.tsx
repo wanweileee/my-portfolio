@@ -6,6 +6,7 @@ import ProjectMeta from "@/components/ProjectMeta";
 import ScrollProgress from "@/components/ScrollProgress";
 import Marker from "@/components/Marker";
 import { getAllProjects, getProjectBySlug } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export async function generateStaticParams() {
   const projects = await getAllProjects();
@@ -89,7 +90,7 @@ export default async function ProjectPage({
               />
             ) : (
               <Image
-                src={cover}
+                src={asset(cover)}
                 alt={frontmatter.coverAlt ?? frontmatter.title}
                 fill
                 sizes="100vw"

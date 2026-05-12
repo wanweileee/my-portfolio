@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Marker from "./Marker";
+import { asset } from "@/lib/asset";
 
 export type ProjectCardData = {
   slug: string;
@@ -32,7 +33,7 @@ export default function ProjectCard({
       >
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-rule bg-paper-tint transition-shadow duration-500 group-hover:shadow-[0_12px_40px_rgba(228,90,146,0.18)]">
           <Image
-            src={cover}
+            src={asset(cover)}
             alt={project.coverAlt ?? project.title}
             fill
             sizes="(min-width: 640px) 48vw, 100vw"

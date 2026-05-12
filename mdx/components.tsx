@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { MDXComponents } from "mdx/types";
 import type { ImgHTMLAttributes, AnchorHTMLAttributes } from "react";
 import CanvaEmbed from "@/components/CanvaEmbed";
+import { asset } from "@/lib/asset";
 
 export const mdxComponents: MDXComponents = {
   h1: (props) => (
@@ -93,7 +94,7 @@ export const mdxComponents: MDXComponents = {
         <span className="relative block aspect-[16/10] w-full overflow-hidden border border-rule bg-paper">
           {source && (
             <Image
-              src={source}
+              src={asset(source)}
               alt={alt ?? ""}
               fill
               sizes="(min-width: 640px) 60vw, 100vw"

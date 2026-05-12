@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 export default function ProseImage({
   src,
@@ -14,7 +15,7 @@ export default function ProseImage({
   return (
     <figure className={`my-12 ${wide ? "-mx-6 sm:-mx-16" : ""}`}>
       <div className="relative aspect-[16/10] w-full overflow-hidden border border-rule bg-paper">
-        <Image src={src} alt={alt} fill sizes="100vw" className="object-cover" />
+        <Image src={asset(src)} alt={alt} fill sizes="100vw" className="object-cover" />
       </div>
       {caption && (
         <figcaption className="mt-3 text-[12px] uppercase tracking-[0.18em] text-ink-soft">
