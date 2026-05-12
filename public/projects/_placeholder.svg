@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="presentation" aria-hidden="true">
+  <rect width="1200" height="800" fill="#FFF3F6"/>
+  <rect x="40" y="40" width="1120" height="720" rx="24" ry="24" fill="none" stroke="#F6CFD8" stroke-width="1.5"/>
+  <g transform="translate(600 400)" font-family="Georgia, serif" fill="#6E5862" text-anchor="middle">
+    <text font-size="22" letter-spacing="6" font-style="italic">cover forthcoming</text>
+  </g>
+  <circle cx="100" cy="100" r="5" fill="#E45A92"/>
+  <circle cx="100" cy="100" r="16" fill="#FF8AB5" opacity="0.25"/>
+  <circle cx="1100" cy="700" r="5" fill="#88D9BC"/>
+</svg>

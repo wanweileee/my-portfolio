@@ -1,0 +1,35 @@
+---
+title: "AI that says less"
+slug: "ai-that-says-less"
+date: "2026-02-11"
+summary: "What happens when you optimise an assistant for silence rather than completion. Some surprises about user trust."
+tags: ["ai", "product"]
+draft: false
+---
+
+Most AI tooling is loud by default. The product manager in the model's training data really wants you to feel like you got your money's worth — so it fills in the blanks before you've finished thinking, and offers three follow-up suggestions even when the right answer was a single word.
+
+I have been quietly running an experiment for the last six months on what happens if you optimise an assistant for the opposite.
+
+## The setup
+
+Two assistants. Same model, same context, same task. The only difference is the prompt: one is told to be helpful, the other is told to be quiet.
+
+> A useful assistant is one you trust to say nothing.
+
+The "quiet" prompt is pretty small. It says: prefer one sentence to three. Ask a clarifying question if you're not sure. Decline confidently if you don't know. Treat the user's attention as a finite resource.
+
+## What happened
+
+Two things, both of them surprising:
+
+1. **Users finished more tasks with the quiet assistant.** Not by a huge margin — maybe 8% — but consistently, across three task categories.
+2. **Users reported trusting the quiet assistant more, even when its answers were less complete.** A representative quote: "It feels like it knows when it doesn't know."
+
+The second one is the interesting one. We have spent a decade training models to never say "I don't know." We may have overcorrected.
+
+## What I'm taking from it
+
+For the products I'm shipping now, the working rule is: if the model isn't at least 80% sure, it should say less, not more. If the user wants more, they can ask.
+
+This is, I think, an opinion. It might also be a discipline.

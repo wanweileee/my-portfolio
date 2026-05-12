@@ -1,0 +1,29 @@
+---
+title: "DBS Account Web Application Optimization"
+slug: "dbs-account-optimization"
+summary: "A full-stack Ruby on Rails application built with TDD/BDD, integrating OCR document extraction and OTP microservices for secure identity verification."
+role: "Full-stack Developer"
+year: 2024
+stack: ["Ruby on Rails", "OCR", "TDD/BDD", "Microservices"]
+cover: "/projects/_placeholder.svg"
+coverAlt: "DBS Account Web Application — cover forthcoming"
+links:
+  - { label: "Project webpage", href: "https://sites.google.com/view/next-gen-ai/home" }
+order: 3
+draft: false
+---
+
+## The brief
+
+Onboarding for a banking product means moving documents, identities, and verification steps through a system that has to stay correct on every step. The brief was to build an account opening flow that was both fast for the user and rigorous behind the scenes.
+
+## What I made
+
+- A Ruby on Rails app developed with **TDD/BDD** from day one — every feature shipped with a behavioural spec describing what it was supposed to do for whom.
+- **OCR-based document extraction** that lifts structured customer data off uploaded IDs and supporting documents, with manual review as a safety net.
+- **OTP microservices** wired into the flow at the verification gates, so identity checks are isolated, testable, and replaceable.
+- Automated validation and verification pipelines that catch malformed data before it reaches a human reviewer.
+
+## What I learned
+
+Writing the spec before the code is annoying for the first two weeks and a gift for the next six months. The places where the spec was hardest to write were almost always the places where the requirements were unclear — TDD turned out to be a requirements-discovery tool as much as a testing one.

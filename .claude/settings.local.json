@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:jackiezhang.co.za)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(curl -s -o /dev/null -w \"/ %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"/projects %{http_code}\\\\n\" http://localhost:3000/projects)",
+      "Bash(curl -s -o /dev/null -w \"/projects/ai-planting-visualizer %{http_code}\\\\n\" http://localhost:3000/projects/ai-planting-visualizer)",
+      "Bash(curl -s -o /dev/null -w \"/projects/dbs-account-optimization %{http_code}\\\\n\" http://localhost:3000/projects/dbs-account-optimization)",
+      "Bash(curl -s -o /dev/null -w \"/projects/sentiment-analysis %{http_code}\\\\n\" http://localhost:3000/projects/sentiment-analysis)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/projects/ai-planting-visualizer)",
+      "Bash(curl -s http://localhost:3000/projects/ai-planting-visualizer)",
+      "WebFetch(domain:sutdapac.sharepoint.com)",
+      "Bash(curl -s -o /dev/null -w \"plant.png %{http_code}\\\\n\" http://localhost:3000/projects/plant.png)"
+    ]
+  }
+}

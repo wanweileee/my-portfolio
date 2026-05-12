@@ -1,0 +1,26 @@
+---
+title: "Sentiment Analysis for Product Insights"
+slug: "sentiment-analysis"
+summary: "Large-scale sentiment analysis on consumer text from YouTube, Amazon, and Reddit — translating unstructured feedback into structured product signals."
+role: "Data & NLP Engineer"
+year: 2023
+stack: ["Python", "NLP", "Web Scraping", "APIs"]
+cover: "/projects/_placeholder.svg"
+coverAlt: "Sentiment Analysis for Product Insights — cover forthcoming"
+order: 6
+draft: false
+---
+
+## The brief
+
+Product decisions get made on *what people say* about a product, but the saying happens scattered across YouTube comments, Amazon reviews, and Reddit threads. The brief: build a pipeline that turns that scatter into something a product team can actually use.
+
+## What I made
+
+- **Data collection** at scale from YouTube, Amazon, and Reddit using APIs and web scraping where APIs ran out.
+- **NLP sentiment models** that classify consumer opinions and surface the themes underneath them — not just positive/negative but *why*.
+- A translation layer that converts unstructured comment text into **structured product signals** (feature requests, complaints, comparisons) a PM can rank against.
+
+## What I learned
+
+Sentiment alone is a fairly thin signal. The interesting work was extracting *what the sentiment is about* — the model that says "this review is angry" matters less than the one that says "this review is angry about the battery." That second model is where decisions get made.

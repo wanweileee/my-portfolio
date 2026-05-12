@@ -1,0 +1,29 @@
+---
+title: "SaveSmart — OCR Expense Categorization"
+slug: "savesmart-ocr"
+summary: "A full-stack React + Flask app that extracts, cleans, and categorises receipt data through an OCR + NLP pipeline."
+role: "Full-stack Developer & ML Engineer"
+year: 2024
+stack: ["React", "Flask", "Python", "OCR", "NLP"]
+cover: "/projects/_placeholder.svg"
+coverAlt: "SaveSmart — cover forthcoming"
+order: 5
+draft: false
+---
+
+## The brief
+
+Most people don't track their spending because the *input* is painful: typing every line item, picking a category, repeating tomorrow. SaveSmart eats the receipt and does the categorising itself.
+
+## What I made
+
+- A **React + Flask** full-stack app where users snap a receipt and the system handles the rest.
+- An **OCR pipeline** that extracts raw text, then cleans and structures the receipt data into normalised line items with merchant, amount, and date.
+- **NLP-based classification** that assigns each line item to a spending category automatically — and learns from the corrections a user makes.
+- Analytics views that surface spending patterns without making them feel like an accusation.
+
+## What I learned
+
+The data was always messier than the demos suggested. The line between "good enough OCR" and "actually usable" was small, and the difference was almost entirely in the cleaning step — not the model.
+
+> The model is a junior employee. The pipeline around it is the manager.

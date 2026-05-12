@@ -1,0 +1,29 @@
+---
+title: "AI Text Training Simulator"
+slug: "ai-text-training-simulator"
+summary: "A full-stack AI training simulator that lets customer service teams practise simultaneous chat scenarios grounded in 2,000+ real policy questions."
+role: "AI Engineer & Full-stack Developer"
+year: 2025
+stack: ["Python", "FastAPI", "RAG", "LLM", "React"]
+cover: "/projects/_placeholder.svg"
+coverAlt: "AI Text Training Simulator — cover forthcoming"
+order: 2
+draft: false
+---
+
+## The brief
+
+Customer service at CPF has moved from inquiry forms to live chat, which means new associates have to juggle multiple conversations, pull policy facts on the fly, and stay composed when things escalate. Scripts and role-play cannot prepare them for that cognitive load. The question: how do you get new associates ready to handle complex, simultaneous chats with accuracy and confidence before they ever face a real customer?
+## What I made
+
+- A full-stack AI training simulator where Customer Service Officers practice handling multiple AI-driven "Scenario Customers" at once, each with their own personality, patience level, and realistic response delays
+- A LangGraph conversation engine that runs each interaction as a stateful directed graph with checkpoint-based resumption, so sessions can pause, branch, and replay without losing context
+- RAG pipelines over 1,000+ CPF policy questions, enriching GPT-4o responses with Gemini embeddings so the AI customers stay grounded in real documentation rather than hallucinating
+- Rubric-based evaluation scoring sessions on tone, accuracy, and comprehension, with results feeding back into trainee dashboards as structured performance data rather than vague feedback
+Stack: Next.js, Tailwind, Shadcn UI, WebSockets on the frontend; FastAPI, async SQLModel, PostgreSQL, JWT auth on the backend; Docker on Render
+
+## What I learned
+
+Most important lesson i have takeaway from this project is that treating each chat as a resumable graph opened up scenarios (pausing, branching, replaying for evaluation)  would have been painful with a simpler architecture
+and the evaluation layer matters as much as the retrieval layer. Rubric scoring closes the feedback loop and turns a sandbox into an actual training tool
+

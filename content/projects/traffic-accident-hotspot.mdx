@@ -1,0 +1,27 @@
+---
+title: "Traffic Accident Hotspot Prediction"
+slug: "traffic-accident-hotspot"
+summary: "Predictive models for identifying accident-prone road segments, built on geospatial, sensor, environmental, and time-series data."
+role: "ML Engineer"
+year: 2024
+stack: ["Python", "scikit-learn", "Geospatial", "Time-series"]
+cover: "/projects/_placeholder.svg"
+coverAlt: "Traffic Accident Hotspot Prediction — cover forthcoming"
+order: 4
+draft: false
+---
+
+## The brief
+
+Road safety teams have plenty of after-the-fact data on accidents but very little predictive signal on *where* the next ones are likely to happen. The project's question: can a model identify hotspot road segments early enough for intervention?
+
+## What I made
+
+- Predictive models built on a fused dataset of **geospatial road network features**, **sensor and traffic data**, **environmental conditions**, and **time-series accident history**.
+- Structured feature engineering with explicit emphasis on interpretability — every input feature has a story a road-safety stakeholder can follow.
+- Evaluation using metrics appropriate for *imbalanced spatial classification* (not just accuracy), with calibration plots and confidence intervals on hotspot rankings.
+- Dashboards and structured graphs that surface hotspot risk scores in a way decision-makers can act on without reading the modelling.
+
+## What I learned
+
+The hardest part of a "predict the rare bad event" model is not the model — it's getting non-technical stakeholders to trust a probabilistic ranking. Visualisations that show *why* a segment is flagged moved the needle on adoption far more than another point of AUC.

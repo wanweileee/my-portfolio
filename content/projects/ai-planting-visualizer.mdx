@@ -1,0 +1,36 @@
+---
+title: "AI Planting Visualizer"
+slug: "ai-planting-visualizer"
+summary: "An AI-driven web app that converts unstructured images and 2D spatial plans into structured landscape representations, reducing design time by 50%."
+role: "RAG Engineer & Frontend Designer"
+year: 2025
+stack: ["Python", "PyTorch", "OpenCV", "RAG", "Next.js"]
+cover: "/projects/plant.png"
+coverAlt: "AI Planting Visualizer — landscape design generated from a 2D plan"
+slidesEmbed: "https://www.canva.com/design/DAHJebgL8Y4/XDsMteOhB7RTq685hloFEQ/view"
+links:
+  - { label: "Open slides in Canva", href: "https://www.canva.com/design/DAHJebgL8Y4/XDsMteOhB7RTq685hloFEQ/view" }
+order: 1
+draft: false
+---
+
+## The brief
+
+HDB landscape designers spend significant time bridging the gap between 2D plan views and rendered perspectives during early concept design. The current workflow relies on Photoshop composites, reference photos, and heavy 3D tools, even for small softscape changes, which leads to slow iteration, miscommunication between the Landscape and Technical teams, and unnecessary rework before BIM modelling. The challenge was clear: how do you give designers a fast, AI-assisted way to visualise softscape concepts that respects spatial fidelity, uses only approved Singapore plant species, and slots into existing workflows without replacing them?
+## What I made
+
+A collaborative web application that lets designers upload a perspective image, select plant species, and generate softscape visualisations grounded in HDB's approved plant list. 
+The system has four core components. 
+- A RAG pipeline built on ChromaDB and Gemini 2.5 Flash retrieves plant species from a curated dataset I helped build by scraping NParks FloraFaunaWeb via their internal REST API after two earlier scraping approaches failed. 
+- An image generation pipeline using OpenAI's image editing model preserves the original perspective and hardscape elements while generating vegetation only within plantable regions. 
+- A lasso-based mask tool lets designers regenerate specific zones (a tree cluster, a planting bed) without touching the rest of the image. 
+- A video generation pipeline using Gemini Veo 3.1 produces cinematic walkthroughs and plant-growth visualisations from static outputs. 
+The stack: React and Vite frontend with Tldraw as the collaborative canvas, FastAPI backend, MongoDB for persistence, JWT auth, all wired together in a modular architecture that can swap components (S3 for storage, Pinecone for vectors) without rewriting the backend.
+
+## What I learned
+
+Constraints are design drivers, not limitations. The whole project was an exercise in saying no to the model, telling OpenAI's image model exactly what it could not touch, telling Gemini exactly what it could not hallucinate, telling the RAG model to output nothing rather than guess. Early iterations of the RAG pipeline produced plausible-sounding but speculative plant recommendations, which is worse than useless in a regulated context. Rewriting the system message to enforce deterministic, dataset-grounded outputs (and to return nothing when uncertain) was a lesson in how prompt engineering is really constraint engineering. On the scraping side, the first two approaches failed before I found the working one by inspecting NParks' network activity in DevTools and discovering a backend REST endpoint, a reminder that the fastest path forward is often hidden one layer below where everyone else is looking. Beyond the technical lessons, working directly with HDB designers showed me how much of AI engineering is workflow archaeology: mapping how people actually work before deciding what to automate.
+
+## Outcome
+
+Replaces hours of Photoshop and 3D rework with prompt and mask based iteration measured in minutes, while keeping perspective, hardscape, and species accuracy intact. The system produces predictable, controllable outputs that fit into HDB's existing pipeline rather than competing with it. The modular architecture leaves a clear path to production (PostgreSQL, Pinecone, S3, WebSockets for real-time collaboration), and the dataset pipeline scales to new species without manual work. Most importantly, the tool gives designers something the existing software stack does not, a fast, lightweight, communication bridge for the messy early stage where most miscommunication and rework actually happens.
