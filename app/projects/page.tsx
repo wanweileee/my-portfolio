@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectsTabs from "@/components/ProjectsTabs";
+import { type ProjectCardData } from "@/components/ProjectCard";
 import { getAllProjects } from "@/lib/content";
 
 export const metadata = {
@@ -9,7 +10,23 @@ export const metadata = {
 };
 
 export default async function ProjectsIndexPage() {
-  const projects = await getAllProjects();
+  const all = await getAllProjects();
+  const toCard = (p: (typeof all)[number]): ProjectCardData => ({
+    slug: p.frontmatter.slug,
+    title: p.frontmatter.title,
+    summary: p.frontmatter.summary,
+    role: p.frontmatter.role,
+    year: p.frontmatter.year,
+    cover: p.frontmatter.cover,
+    coverAlt: p.frontmatter.coverAlt,
+  });
+
+  const side = all
+    .filter((p) => p.frontmatter.category === "side")
+    .map(toCard);
+  const school = all
+    .filter((p) => (p.frontmatter.category ?? "school") === "school")
+    .map(toCard);
 
   return (
     <div className="pt-32">
@@ -28,35 +45,14 @@ export default async function ProjectsIndexPage() {
             All Work
           </h1>
           <p className="mt-6 max-w-[60ch] text-[15px] leading-[1.65] text-ink-soft">
-            Every project, in order. Some live, some in archive. Each has a
-            short case study attached.
+            Two stacks — hackathons and side projects on top, school work
+            underneath. Each card opens a short case study.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-[1240px] px-[clamp(20px,4vw,64px)] py-12">
-        <div className="space-y-20">
-          {projects.length === 0 && (
-            <p className="text-[15px] text-ink-soft italic font-display">
-              No projects yet. Drop an .mdx file in content/projects/ to begin.
-            </p>
-          )}
-          {projects.map((p, i) => (
-            <ProjectCard
-              key={p.frontmatter.slug}
-              project={{
-                slug: p.frontmatter.slug,
-                title: p.frontmatter.title,
-                summary: p.frontmatter.summary,
-                role: p.frontmatter.role,
-                year: p.frontmatter.year,
-                cover: p.frontmatter.cover,
-                coverAlt: p.frontmatter.coverAlt,
-              }}
-              index={i}
-            />
-          ))}
-        </div>
+        <ProjectsTabs side={side} school={school} />
         <div className="mt-20">
           <Link
             href="/"

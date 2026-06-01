@@ -1,0 +1,48 @@
+---
+title: "Financial News Analyzer"
+slug: "financial-news-analyzer"
+summary: "A two-agent system that wakes up every morning, reads the day's financial news, and produces investor-grade summaries with sentiment, risk tags, and confidence scores. Built for the AWS AI Agent Hackathon."
+role: "Hackathon Project"
+year: 2026
+stack: ["Bedrock", "Claude 3.5 Sonnet", "Lambda", "API Gateway", "DynamoDB", "S3", "EventBridge", "CloudWatch"]
+cover: "/projects/_placeholder.svg"
+coverAlt: "Financial News Analyzer — cover forthcoming"
+links:
+  - { label: "GitHub", href: "https://github.com/wanweileee/financial-news" }
+order: 11
+category: "side"
+draft: false
+---
+
+> **Status**: Submitted · Built for the AWS AI Agent Hackathon
+>
+> **Stack**: Bedrock (Claude 3.5 Sonnet), Lambda, API Gateway, DynamoDB, S3, EventBridge, CloudWatch
+
+## What I built
+
+A two-agent system that wakes up every morning, reads the day's financial news, and produces investor-grade summaries with sentiment, risk tags, and confidence scores. Autonomous multi-agent system on AWS Bedrock.
+
+## The problem
+
+Anyone tracking markets ends up reading dozens of articles a day to figure out which signals are worth acting on. Most of it is noise. The interesting question is whether an autonomous system could do the first-pass triage well enough to be trusted, without a human in the loop.
+
+## How it works
+
+Two cooperating agents on Amazon Bedrock (Claude 3.5 Sonnet), orchestrated through a fully serverless AWS stack:
+
+- **Analyst Agent** ingests articles, extracts company entities, scores sentiment, and drafts structured insights
+- **Reviewer Agent** verifies the Analyst's output for factual consistency, adjusts confidence, and approves a final summary
+- **Orchestrator** coordinates the pipeline through Lambda functions for fetching, link verification, entity enrichment, and persistence
+- **EventBridge schedule** triggers the whole flow daily without human input — that's where the autonomy actually comes from
+
+## Why two agents
+
+The two-agent pattern was the most interesting design choice. A single agent kept producing confident but occasionally wrong summaries. Adding a Reviewer with the explicit job of *doubting* the Analyst caught a meaningful fraction of those, and the verification step itself became a kind of structured evaluation layer baked into the runtime.
+
+## What I learned
+
+The hackathon was framed around "build an agent," but most of my time went into questions that had nothing to do with the model. How do you stop one agent from rubber-stamping the other? What does "verify" actually mean when both agents are using the same underlying LLM? How do you keep the system cheap when autonomous schedules mean it runs whether anyone is watching or not?
+
+The thing I'd do differently next time is build the evaluation harness *before* the agents. I built the agents first and ended up reverse-engineering what "good output" meant by reading the runs that felt off. Defining the rubric up front would have made the Reviewer's job much cleaner. It's a lesson I've since applied to other RAG and agentic projects.
+
+The Bedrock and serverless ecosystem was new to me at the start of the hackathon. Coming out of it, I'm comfortable with the agent design pattern, the AWS event-driven model, and the trade-offs between hosted reasoning models and self-managed inference.

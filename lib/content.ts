@@ -6,6 +6,8 @@ const ROOT = path.join(process.cwd(), "content");
 
 export type ProjectLink = { label: string; href: string };
 
+export type ProjectCategory = "school" | "side";
+
 export type ProjectFrontmatter = {
   title: string;
   slug: string;
@@ -19,6 +21,7 @@ export type ProjectFrontmatter = {
   links?: ProjectLink[];
   order?: number;
   draft?: boolean;
+  category?: ProjectCategory;
 };
 
 export type Project = { frontmatter: ProjectFrontmatter; body: string };

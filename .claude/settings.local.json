@@ -14,7 +14,19 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/projects/ai-planting-visualizer)",
       "Bash(curl -s http://localhost:3000/projects/ai-planting-visualizer)",
       "WebFetch(domain:sutdapac.sharepoint.com)",
-      "Bash(curl -s -o /dev/null -w \"plant.png %{http_code}\\\\n\" http://localhost:3000/projects/plant.png)"
+      "Bash(curl -s -o /dev/null -w \"plant.png %{http_code}\\\\n\" http://localhost:3000/projects/plant.png)",
+      "Bash(curl -sL -o /dev/null -w \"site: %{http_code}\\\\n\" https://wanweileee.github.io/my-portfolio/)",
+      "Bash(curl -sL https://wanweileee.github.io/my-portfolio/)",
+      "Bash(curl -sL -o /dev/null -w \"plant.png: %{http_code}\\\\n\" https://wanweileee.github.io/my-portfolio/projects/plant.png)",
+      "Bash(curl -sL -o /dev/null -w \"placeholder.svg: %{http_code}\\\\n\" https://wanweileee.github.io/my-portfolio/projects/_placeholder.svg)",
+      "Bash(curl -sL -o /dev/null -w \"no-prefix plant: %{http_code}\\\\n\" https://wanweileee.github.io/projects/plant.png)",
+      "Bash(curl -sL -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/projects)",
+      "Bash(curl -sL http://localhost:3000/projects)",
+      "Bash(curl -sL -o /dev/null -w \"/projects %{http_code}\\\\n\" http://localhost:3000/projects)",
+      "Bash(curl -sL -o /dev/null -w \"case study %{http_code}\\\\n\" http://localhost:3000/projects/multi-agent-equity-analysis)",
+      "Bash(curl -sL http://localhost:3000/projects/multi-agent-equity-analysis)",
+      "Bash(curl -sL -o /dev/null -w \"case study %{http_code}\\\\n\" http://localhost:3000/projects/financial-news-analyzer)",
+      "Bash(grep -oE 'Financial News|Autonomous Cohort|Multi-Agent Equity|Hackathons / Self.{0,30}')"
     ]
   }
 }

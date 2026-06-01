@@ -28,10 +28,10 @@ const EXPERIENCE: ExperienceItem[] = [
 const EDUCATION: ExperienceItem[] = [
   {
     year: "Sep 2022 — Present",
-    role: "Bachelor of Science",
+    role: "Bachelor of Science (Honours)",
     org: "Singapore University of Technology and Design",
     blurb:
-      "Design and Artificial Intelligence — an interdisciplinary track combining engineering, AI, and design thinking.",
+      "Design and Artificial Intelligence , Minor in Computer Science",
   },
 ];
 

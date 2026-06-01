@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { MDXComponents } from "mdx/types";
 import type { ImgHTMLAttributes, AnchorHTMLAttributes } from "react";
 import CanvaEmbed from "@/components/CanvaEmbed";
@@ -89,19 +88,15 @@ export const mdxComponents: MDXComponents = {
   CanvaEmbed,
   img: ({ src, alt }: ImgHTMLAttributes<HTMLImageElement>) => {
     const source = typeof src === "string" ? src : "";
+    if (!source) return null;
     return (
       <span className="my-10 block">
-        <span className="relative block aspect-[16/10] w-full overflow-hidden border border-rule bg-paper">
-          {source && (
-            <Image
-              src={asset(source)}
-              alt={alt ?? ""}
-              fill
-              sizes="(min-width: 640px) 60vw, 100vw"
-              className="object-cover"
-            />
-          )}
-        </span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={asset(source)}
+          alt={alt ?? ""}
+          className="mx-auto block h-auto max-w-full rounded-2xl border border-rule bg-paper-tint"
+        />
         {alt && (
           <span className="mt-3 block text-[12px] uppercase tracking-[0.18em] text-ink-soft">
             {alt}

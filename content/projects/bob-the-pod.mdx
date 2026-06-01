@@ -1,0 +1,53 @@
+---
+title: "BOB the Pod"
+slug: "bob-the-pod"
+summary: "A collapsible smart workspace pod for compact urban homes — capstone for Delta Electronics × SUTD. I built the mobile application in two editions tuned for office and home use, connecting React Native to the pod's IoT hardware."
+role: "Mobile Application Developer"
+year: 2026
+stack: ["React Native", "PostgreSQL", "AWS IoT Core", "MQTT", "ESP32"]
+cover: "/projects/bob.jpg"
+coverAlt: "BOB the Pod — collapsible smart workspace, capstone for Delta Electronics × SUTD"
+slidesEmbed: "https://www.canva.com/design/DAHGNgs8vNY/KAtnKlW3bwykzzdNE0m_Fw/view"
+links:
+  - { label: "Open slides in Canva", href: "https://www.canva.com/design/DAHGNgs8vNY/KAtnKlW3bwykzzdNE0m_Fw/view" }
+  - { label: "GitHub repo", href: "https://github.com/trinatxt/capstone" }
+order: 0
+category: "school"
+draft: false
+---
+
+## The brief
+
+A seven-person capstone project for Delta Electronics, designing a collapsible single-user work pod for compact urban homes. The brief recognised that hybrid work has settled into permanence, Singapore homes are getting smaller, and conventional office pods are fixed structures that demand permanent space.
+
+The team designed a pod that opens to a full ergonomic workspace and collapses to roughly the footprint of a vending machine. I was responsible for the mobile application — the layer that turns the pod from a piece of furniture into a connected workspace.
+
+## What the team built
+
+![BOB the Pod deployed at full 1:1 scale, fabricated by the capstone team](/projects/bob1.jpg)
+
+A two-part wooden pod connected by telescopic rails, with acoustic curtains forming the enclosure when deployed. Inside, the seat and table are height-adjustable via linear actuators, and lighting and ventilation are controllable through both physical buttons and the mobile app.
+
+The pod was fabricated at full 1:1 scale, validated through an acoustic test showing 40 dB attenuation in mid- and high-frequency ranges, and received positive feedback from our industry mentor at Delta Electronics.
+
+## What I built — the mobile application
+
+A React Native app shipped in two editions, each tuned to a different context of use. The architectural decision to split the app was the most consequential product call I made on the project: the same pod has fundamentally different social dynamics at home (one user surrounded by family) versus in an office (many users sharing the resource), and trying to serve both contexts in a single interface would have produced something compromised in both.
+
+**Office edition.** Centred on booking. Users can browse pod availability by timeslot, reserve a pod, and check in when their session begins. The booking flow handles conflict prevention server-side against a PostgreSQL backend, and users can view both today's and upcoming reservations from the home screen.
+
+**Home edition.** Centred on the *Knock* feature, which I'm proudest of as a design call. When the pod is in use, family members appear in a list on the home screen with a Knock button next to each name. Tapping it triggers a brief orange LED pulse inside the pod and sends a quick-reply notification, letting the user inside acknowledge with a one-tap response ("5 min," "15 min," "I'm free") without opening their laptop or breaking focus. The feature came out of recognising that the real cost of working from home isn't workspace — it's the friction of being interrupted versus the guilt of being unreachable. Knock collapses that to a one-tap interaction.
+
+**Shared across both editions.** Real-time control over lighting (brightness, colour temperature, three presets for meeting, reading, and relaxation), fan speed, and ventilation — all wired through the pod's IoT pipeline. A dashboard surfaces current settings and a "Smart Suggestion" panel that recommends configurations based on the active mode. An events tab handles team birthdays and activities for the office edition. Profile settings let users set a preferred default mode that the pod applies automatically when they check in.
+
+## How the app talks to the pod
+
+The app integrates with the pod hardware through an AWS-hosted backend, with commands flowing through AWS IoT Core's MQTT publish/subscribe layer down to the pod's ESP32 microcontroller.
+
+From the app side, this meant handling optimistic UI updates carefully: a user expects an LED to respond instantly when they drag a brightness slider, but the round-trip through cloud and MQTT introduces real latency. Getting that feel right took more iteration than the rest of the app combined.
+
+## What I learned
+
+The interesting work wasn't any single screen — it was the gap between two ideas of what the app should do. There's a *control-surface* idea, where the app is a remote that maps tightly to the pod's physical capabilities, and a *product* idea, where the app shapes how people relate to the pod and to each other around it. Knock came from the product side. The booking flow came from the control side. Both belong in the app, but they require different design instincts, and learning to switch between them was the actual craft of the project.
+
+The other lesson was about working on a software layer of a hardware product. Decisions made by the mechanical and electronics teams (where the LED strips were mounted, what the manual switch did, how the pod behaved during expansion) all became constraints I had to design around. Treating the app as something that gets layered on top at the end would have produced a worse product. The version we shipped works because the app design and the pod design informed each other from early on.
