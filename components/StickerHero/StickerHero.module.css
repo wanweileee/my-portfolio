@@ -1,0 +1,229 @@
+/* ============================================================
+   StickerHero.module.css
+   Scoped styles for the sticker-collage hero.
+   Palette vars are scoped to .root; font vars (--font-display /
+   --font-body / --font-hand) come from the global layout fonts.
+   ============================================================ */
+
+.root {
+  /* palette — mirrors the site's @theme tokens, scoped locally */
+  --paper: #fffafb;
+  --paper-tint: #fff3f6;
+  --ink: #2d1b25;
+  --ink-soft: #6e5862;
+  --rule: #f6cfd8;
+  --accent: #e45a92;
+  --accent-bright: #ff8ab5;
+  --accent-soft: #ffd1dc;
+  --mint: #88d9bc;
+
+  --note-pink: #ffe3ec;  --note-pink-b: #ffb6cd;
+  --note-mint: #dbf3e8;  --note-mint-b: #a6dcc4;
+  --note-cream: #fff6e2; --note-cream-b: #f2dca0;
+
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 84px clamp(20px, 4vw, 56px) 64px;
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  background: radial-gradient(120% 90% at 12% -10%, #fff7fa 0%, var(--paper-tint) 48%, #ffe6ee 100%);
+}
+.root ::selection { background: var(--accent-soft); color: var(--ink); }
+.root a { color: inherit; text-decoration: none; }
+
+/* faint notebook grid wash */
+.bgGrid {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(transparent 31px, rgba(228,90,146,0.10) 31px, rgba(228,90,146,0.10) 32px),
+    linear-gradient(90deg, transparent 31px, rgba(228,90,146,0.06) 31px, rgba(228,90,146,0.06) 32px);
+  background-size: 32px 32px;
+  -webkit-mask-image: radial-gradient(120% 100% at 50% 30%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(120% 100% at 50% 30%, #000 55%, transparent 100%);
+}
+
+/* ---------- stage ---------- */
+.stage {
+  position: relative;
+  width: 100%; max-width: 1240px; margin: 0 auto;
+  height: clamp(540px, 72vh, 700px);
+  z-index: 1;
+}
+
+/* headline block */
+.lede { position: absolute; left: 0; top: 4%; max-width: 56%; z-index: 6; }
+.hello {
+  font-family: var(--font-hand), "Caveat", cursive; color: var(--accent);
+  font-size: clamp(28px, 3.4vw, 48px); line-height: 1;
+  transform: rotate(-3deg); display: inline-block; margin: 0 0 .15em;
+}
+.headline {
+  font-family: var(--font-display), ui-serif, Georgia, serif; font-style: italic; font-weight: 380;
+  font-variation-settings: "opsz" 110;
+  font-size: clamp(34px, 5.4vw, 70px); line-height: 1.07; letter-spacing: -0.02em;
+  margin: 0; color: var(--ink); text-wrap: balance;
+}
+.headline em { color: var(--accent); font-style: italic; }
+.subline {
+  font-size: clamp(13px, 1vw, 15px); letter-spacing: .03em; color: var(--ink-soft);
+  margin: 32px 0 0; max-width: 44ch; line-height: 1.6;
+}
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 26px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; letter-spacing: .16em; text-transform: uppercase; font-weight: 500;
+  padding: 12px 20px; border-radius: 999px;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btnPrimary { background: var(--accent); color: var(--paper); box-shadow: 0 8px 22px -8px rgba(228,90,146,.5); }
+.btnPrimary:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -10px rgba(228,90,146,.6); }
+.btnGhost { color: var(--ink); border: 1.5px solid var(--rule); }
+.btnGhost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+.ledeHint {
+  font-family: var(--font-hand), "Caveat", cursive; color: var(--ink-soft);
+  font-size: 19px; margin: 18px 0 0; transform: rotate(-2deg); transform-origin: left;
+}
+
+/* ---------- scrapbook primitives ---------- */
+.stamp {
+  position: absolute; display: grid; place-items: center; text-align: center;
+  width: 108px; height: 108px; border-radius: 50%;
+  border: 2px dashed var(--accent); color: var(--accent);
+  background: rgba(255,255,255,0.5);
+  text-transform: uppercase; letter-spacing: 0.15em; font-size: 9px; font-weight: 600; line-height: 1.5;
+  box-shadow: inset 0 0 0 4px rgba(255,255,255,0.5); z-index: 7;
+}
+.stamp b { font-size: 13px; letter-spacing: 0.08em; }
+
+.tape {
+  position: absolute; width: 92px; height: 26px;
+  background: repeating-linear-gradient(45deg, rgba(255,138,181,0.55) 0 8px, rgba(228,90,146,0.42) 8px 16px);
+  border-left: 1px dashed rgba(255,255,255,0.5); border-right: 1px dashed rgba(255,255,255,0.5);
+  box-shadow: 0 2px 6px rgba(45,27,37,0.12); z-index: 2;
+}
+.tapeMint { background: repeating-linear-gradient(45deg, rgba(136,217,188,0.62) 0 8px, rgba(102,191,158,0.5) 8px 16px); }
+
+.polaroid {
+  position: absolute; width: 220px; padding: 11px 11px 0;
+  background: #fffdfd; border: 1px solid rgba(228,90,146,0.18);
+  box-shadow: 0 16px 32px -14px rgba(45,27,37,0.36);
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; z-index: 5;
+}
+.shot { position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--accent-soft); display: block; }
+.shot img { object-fit: cover; }
+.cap { font-family: var(--font-hand), "Caveat", cursive; color: var(--ink); font-size: 22px; line-height: 1; padding: 9px 2px 12px; text-align: center; }
+.polaroid:hover { transform: rotate(0deg) translateY(-6px) scale(1.03) !important; box-shadow: 0 28px 50px -16px rgba(45,27,37,0.44); z-index: 30; }
+
+.sticky {
+  position: absolute; display: inline-block; padding: 16px 17px 18px;
+  min-width: 158px; max-width: 206px;
+  background: var(--note-pink); border: 1px solid var(--note-pink-b); border-radius: 3px;
+  box-shadow: 0 10px 24px -8px rgba(45,27,37,0.2);
+  transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease; z-index: 4;
+}
+.pink  { background: var(--note-pink);  border-color: var(--note-pink-b); }
+.mint  { background: var(--note-mint);  border-color: var(--note-mint-b); }
+.cream { background: var(--note-cream); border-color: var(--note-cream-b); }
+.sticky p { font-family: var(--font-hand), "Caveat", cursive; font-size: 22px; line-height: 1.1; color: var(--ink); margin: 0; }
+.pinTape {
+  position: absolute; top: -9px; left: 50%; width: 56px; height: 17px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(228,90,146,0.42); border: 1px solid rgba(228,90,146,0.3); border-radius: 2px;
+}
+.sticky:hover { transform: translateY(-6px) rotate(0deg) !important; box-shadow: 0 18px 34px -10px rgba(45,27,37,0.3); z-index: 31; }
+
+/* die-cut draggable sticker */
+.drag { position: absolute; z-index: 8; touch-action: none; }
+.cut {
+  display: grid; place-items: center; padding: 12px;
+  background: #fffdfd; border-radius: 18px;
+  box-shadow: 0 10px 22px -8px rgba(45,27,37,0.32), inset 0 0 0 3px rgba(255,255,255,0.9);
+  filter: drop-shadow(0 1px 0 var(--accent-soft));
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease; cursor: grab;
+}
+.cutMint { filter: drop-shadow(0 1px 0 var(--note-mint-b)); }
+.cutInk  { filter: drop-shadow(0 1px 0 rgba(45,27,37,0.25)); }
+.drag:hover .cut { transform: rotate(-4deg) scale(1.06); box-shadow: 0 18px 30px -10px rgba(45,27,37,0.4), inset 0 0 0 3px rgba(255,255,255,0.9); }
+.grabbing { z-index: 60 !important; }
+.grabbing .cut { cursor: grabbing; transform: scale(1.1) rotate(3deg); }
+
+.doodle { color: var(--accent); overflow: visible; display: block; }
+.doodleMint { color: var(--mint); }
+.doodleInk  { color: var(--ink); }
+
+/* ---------- custom sparkle cursor ---------- */
+.cursorOn { cursor: none; }
+.cursorOn a, .cursorOn .btn, .cursorOn .drag { cursor: none; }
+.cursor {
+  position: fixed; top: 0; left: 0; width: 1px; height: 1px;
+  pointer-events: none; z-index: 999; opacity: 0; transition: opacity .18s ease; will-change: transform;
+}
+.cursor svg { display: block; transform: translate(-50%, -50%); }
+.cursor svg path { stroke: var(--accent); stroke-width: 2.4; fill: var(--accent-bright); fill-opacity: .85; }
+.spark {
+  position: fixed; width: 12px; height: 12px; pointer-events: none; z-index: 998;
+  color: var(--accent-bright); animation: sparkfade .7s ease forwards;
+}
+@keyframes sparkfade {
+  0% { opacity: 1; transform: translate(-50%,-50%) scale(.4) rotate(0deg); }
+  100% { opacity: 0; transform: translate(-50%,-50%) scale(1.1) rotate(60deg); }
+}
+
+/* scroll cue */
+.scrollCue {
+  position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%);
+  font-family: var(--font-hand), "Caveat", cursive; color: var(--ink-soft); font-size: 19px; z-index: 6;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.arr { animation: bob 1.8s ease-in-out infinite; }
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+/* ---------- entrance ---------- */
+.pop { opacity: 0; transform: translateY(16px) rotate(var(--rot, 0deg)) scale(.96); }
+@media (prefers-reduced-motion: no-preference) {
+  .root.ready .pop { animation: pop .6s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: var(--d, 0s); }
+  @keyframes pop {
+    from { opacity: 0; transform: translateY(16px) rotate(var(--rot, 0deg)) scale(.96); }
+    to   { opacity: 1; transform: rotate(var(--rot, 0deg)); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pop { opacity: 1; transform: rotate(var(--rot, 0deg)); }
+  .arr { animation: none; }
+}
+
+/* ============================================================
+   Responsive — collage (desktop) → stacked flow (mobile)
+   ============================================================ */
+@media (max-width: 880px) {
+  .root { padding: 80px 22px 56px; align-items: flex-start; }
+  .stage { height: auto; display: flex; flex-direction: column; gap: 26px; }
+
+  .lede { position: static; max-width: 100%; }
+  .headline { font-size: clamp(30px, 8.5vw, 46px); line-height: 1.1; }
+  .subline { max-width: 100%; margin-top: 20px; }
+
+  .reel {
+    position: static !important; display: flex; gap: 26px; padding: 8px 4px 14px;
+    overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+  }
+  .reel .polaroid {
+    position: relative !important; left: auto !important; right: auto !important;
+    top: auto !important; bottom: auto !important; flex: 0 0 auto; width: 200px;
+    transform: rotate(0deg) !important; scroll-snap-align: center;
+  }
+  .reel .tape { display: none; }
+
+  .beliefs { position: static !important; display: flex; flex-wrap: wrap; gap: 16px; }
+  .beliefs .sticky {
+    position: relative !important; left: auto !important; right: auto !important;
+    top: auto !important; bottom: auto !important; transform: rotate(0deg) !important;
+  }
+
+  .drag, .scrollCue, .stamp, .ledeHint { display: none; }
+  .cursor, .spark { display: none; }
+}

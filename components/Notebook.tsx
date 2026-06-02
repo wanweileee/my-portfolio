@@ -162,13 +162,13 @@ export default function Notebook() {
 
           <div className="relative mt-12 flex flex-wrap items-start justify-center gap-x-8 gap-y-10 sm:gap-x-12">
             <StickyNote rotate={-4} tone="pink">
-              Start before you're ready, doing is the fastest teacher
+              Start before you&apos;re ready, doing is the fastest teacher
             </StickyNote>
             <StickyNote rotate={3} tone="mint">
               Be bold, hesitation costs more than mistakes
             </StickyNote>
             <StickyNote rotate={-2} tone="cream">
-              Think there's always a way, then go find it
+              Think there&apos;s always a way, then go find it
             </StickyNote>
           </div>
 
