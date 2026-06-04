@@ -5,7 +5,7 @@ import { getAllWriting, formatMonthYear } from "@/lib/content";
 
 export const metadata = {
   title: "Writing · Wan Wei",
-  description: "Field notes — essays and short pieces.",
+  description: "Field notes: essays and short pieces.",
 };
 
 export default async function WritingIndexPage() {
@@ -15,7 +15,7 @@ export default async function WritingIndexPage() {
     <div className="pt-32">
       <section className="mx-auto grid max-w-[1240px] grid-cols-12 gap-6 px-[clamp(20px,4vw,64px)] py-16 sm:py-24">
         <div className="col-span-12 order-2 sm:order-2 sm:col-start-10 sm:col-span-3 sm:row-start-1">
-          <SectionHeader n="—" label="Field Notes" />
+          <SectionHeader n="·" label="Field Notes" />
         </div>
         <div className="col-span-12 order-1 sm:order-1 sm:col-start-2 sm:col-span-7 sm:row-start-1">
           <h1

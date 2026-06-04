@@ -157,7 +157,7 @@ export default function Notebook() {
             className="font-hand text-accent"
             style={{ fontSize: "clamp(22px, 2.4vw, 30px)", lineHeight: 1 }}
           >
-            3 things that resonates with me —
+            3 things that resonate with me
           </p>
 
           <div className="relative mt-12 flex flex-wrap items-start justify-center gap-x-8 gap-y-10 sm:gap-x-12">

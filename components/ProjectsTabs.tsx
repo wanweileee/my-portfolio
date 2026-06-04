@@ -79,7 +79,7 @@ export default function ProjectsTabs({
             <div className="rounded-2xl border border-rule bg-paper-tint/40 px-8 py-16 text-center">
               <p className="font-display text-[clamp(22px,2.2vw,30px)] italic text-ink-soft">
                 {active === "side"
-                  ? "No hackathon or side projects up here yet — coming soon."
+                  ? "No hackathon or side projects up here yet. Coming soon."
                   : "No school projects to show."}
               </p>
               <p className="mt-3 text-[13px] text-ink-soft">

@@ -82,7 +82,7 @@ export default async function ProjectPage({
                     ? `${frontmatter.slidesEmbed}&embed`
                     : `${frontmatter.slidesEmbed}?embed`
                 }
-                title={`${frontmatter.title} — slides`}
+                title={`${frontmatter.title}: slides`}
                 allow="fullscreen"
                 allowFullScreen
                 loading="lazy"

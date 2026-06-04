@@ -27,7 +27,7 @@ export default function ExperienceList({ items }: { items: ExperienceItem[] }) {
               }}
             >
               {it.role}
-              <span className="text-ink-soft"> — {it.org}</span>
+              <span className="text-ink-soft"> at {it.org}</span>
             </p>
             {it.blurb && (
               <p className="mt-2 max-w-[60ch] text-[15px] leading-[1.6] text-ink-soft">

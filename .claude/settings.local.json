@@ -26,7 +26,8 @@
       "Bash(curl -sL -o /dev/null -w \"case study %{http_code}\\\\n\" http://localhost:3000/projects/multi-agent-equity-analysis)",
       "Bash(curl -sL http://localhost:3000/projects/multi-agent-equity-analysis)",
       "Bash(curl -sL -o /dev/null -w \"case study %{http_code}\\\\n\" http://localhost:3000/projects/financial-news-analyzer)",
-      "Bash(grep -oE 'Financial News|Autonomous Cohort|Multi-Agent Equity|Hackathons / Self.{0,30}')"
+      "Bash(grep -oE 'Financial News|Autonomous Cohort|Multi-Agent Equity|Hackathons / Self.{0,30}')",
+      "Bash(curl -sL http://localhost:3000/projects/bob-the-pod)"
     ]
   }
 }

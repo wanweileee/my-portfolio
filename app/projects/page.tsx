@@ -6,7 +6,7 @@ import { getAllProjects } from "@/lib/content";
 
 export const metadata = {
   title: "Work · Wan Wei",
-  description: "Selected work — case studies and writeups.",
+  description: "Selected work: case studies and writeups.",
 };
 
 export default async function ProjectsIndexPage() {
@@ -32,7 +32,7 @@ export default async function ProjectsIndexPage() {
     <div className="pt-32">
       <section className="mx-auto grid max-w-[1240px] grid-cols-12 gap-6 px-[clamp(20px,4vw,64px)] py-16 sm:py-24">
         <div className="col-span-12 order-2 sm:order-2 sm:col-start-10 sm:col-span-3 sm:row-start-1">
-          <SectionHeader n="—" label="The Index" />
+          <SectionHeader n="·" label="The Index" />
         </div>
         <div className="col-span-12 order-1 sm:order-1 sm:col-start-2 sm:col-span-7 sm:row-start-1">
           <h1
@@ -45,7 +45,7 @@ export default async function ProjectsIndexPage() {
             All Work
           </h1>
           <p className="mt-6 max-w-[60ch] text-[15px] leading-[1.65] text-ink-soft">
-            Two stacks — hackathons and side projects on top, school work
+            Two stacks. Hackathons and side projects on top, school work
             underneath. Each card opens a short case study.
           </p>
         </div>

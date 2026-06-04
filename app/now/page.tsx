@@ -17,7 +17,7 @@ export default async function NowPage() {
     <div className="pt-32">
       <section className="mx-auto grid max-w-[1240px] grid-cols-12 gap-6 px-[clamp(20px,4vw,64px)] py-16 sm:py-24">
         <div className="col-span-12 order-2 sm:order-2 sm:col-start-10 sm:col-span-3 sm:row-start-1">
-          <SectionHeader n="—" label="Now" />
+          <SectionHeader n="·" label="Now" />
         </div>
         <div className="col-span-12 order-1 sm:order-1 sm:col-start-2 sm:col-span-7 sm:row-start-1">
           <Marker className="mb-6 block">

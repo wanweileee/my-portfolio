@@ -19,14 +19,14 @@ const CONTENT = {
     { id: "cat",       size: 72, left: "62%", top: "48%", rot: -3, d: ".58s", tone: "ink" },
   ],
   polaroids: [
-    { src: "/projects/bob.jpg",   alt: "BOB the Pod — collapsible smart workspace", cap: "BOB · the pod",        left: "55%", bottom: "6%",  rot: -5, d: ".30s", tape: "",     tapeRot: -5 },
+    { src: "/projects/bob.jpg",   alt: "BOB the Pod: collapsible smart workspace", cap: "BOB · the pod",        left: "55%", bottom: "6%",  rot: -5, d: ".30s", tape: "",     tapeRot: -5 },
     { src: "/projects/plant.png", alt: "AI Planting Visualizer",                    cap: "planting visualizer", left: "71%", bottom: "13%", rot: 5,  d: ".36s", tape: "mint", tapeRot: 5 },
     { src: "/projects/dbs1.jpg",  alt: "Team at Google Developer Space",            cap: "team @ Google ♡",     left: "80%", bottom: "2%",  rot: -3, d: ".42s", tape: "",     tapeRot: 3 },
   ],
   beliefs: [
-    { tone: "pink",  text: "Start before you're ready — doing is the fastest teacher.", left: "0%",  bottom: "6%", rot: -4, d: ".16s" },
-    { tone: "mint",  text: "Be bold — hesitation costs more than mistakes.",            left: "15%", bottom: "1%", rot: 3,  d: ".22s" },
-    { tone: "cream", text: "There's always a way — then go find it.",                   left: "30%", bottom: "9%", rot: -1, d: ".28s" },
+    { tone: "pink",  text: "Start before you're ready. Doing is the fastest teacher.", left: "0%",  bottom: "6%", rot: -4, d: ".16s" },
+    { tone: "mint",  text: "Be bold. Hesitation costs more than mistakes.",            left: "15%", bottom: "1%", rot: 3,  d: ".22s" },
+    { tone: "cream", text: "There's always a way. Go find it.",                         left: "30%", bottom: "9%", rot: -1, d: ".28s" },
   ],
 };
 
@@ -178,13 +178,13 @@ export default function StickerHero() {
             Building careful systems where <em>vision</em>, <em>language</em> &amp; <em>software</em> meet.
           </h1>
           <p className={styles.subline}>
-            Open to roles — AI&nbsp;Engineer · Tech&nbsp;Consultant · Product&nbsp;Manager. Based in Singapore, GMT&nbsp;+8.
+            Open to roles: AI&nbsp;Engineer · Tech&nbsp;Consultant · Product&nbsp;Manager. Based in Singapore, GMT&nbsp;+8.
           </p>
           <div className={styles.cta}>
             <a className={`${styles.btn} ${styles.btnPrimary}`} href={`mailto:${CONTENT.email}`}>Say hello →</a>
             <a className={`${styles.btn} ${styles.btnGhost}`} href={CONTENT.workHref}>See selected work</a>
           </div>
-          <p className={styles.ledeHint}>psst — the stickers are draggable ✦</p>
+          <p className={styles.ledeHint}>psst, the stickers are draggable ✦</p>
         </div>
 
         {/* available stamp */}

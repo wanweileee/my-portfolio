@@ -6,7 +6,7 @@ role: "Hackathon Project"
 year: 2026
 stack: ["Vertex AI", "Gemini 2.5", "BigQuery", "Fivetran", "Slack", "Cloud Run", "Python"]
 cover: "/projects/_placeholder.svg"
-coverAlt: "Autonomous Cohort Discovery Agent — cover forthcoming"
+coverAlt: "Autonomous Cohort Discovery Agent: cover forthcoming"
 order: 9
 category: "side"
 draft: false
@@ -22,7 +22,7 @@ A multi-step agent that reads a BigQuery warehouse loaded by Fivetran, autonomou
 
 ## Why this problem
 
-Marketing ops at most PLG SaaS companies ship 2–4 personalization campaigns per quarter. Their warehouses contain 30+ untapped cohorts. The gap isn't creativity or tooling — it's human cognitive throughput.
+Marketing ops at most PLG SaaS companies ship 2–4 personalization campaigns per quarter. Their warehouses contain 30+ untapped cohorts. The gap isn't creativity or tooling. It is human cognitive throughput.
 
 Most "AI marketing" tools attack the wrong end of that gap: they make it faster to *write* a campaign, but the bottleneck is *finding* the cohort worth writing for in the first place. LLMs that can reason about structured data and call tools are the first reasonable shot at automating the discovery step itself, not just the copy.
 
@@ -32,9 +32,9 @@ Most "AI marketing" tools attack the wrong end of that gap: they make it faster 
 
 The reason this matters: if I let the LLM judge "is this cohort significant?", I'd ship campaigns based on noise. The LLM is bracketed on both sides by code I can verify, which keeps it useful without being load-bearing for correctness. Trust is allocated to the part of the system that can actually be wrong about it.
 
-**Channel selection is rules, not LLM.** "Should this go to email or push?" is deterministic — it depends on cohort recency, 30-day email engagement, and value tier. Making it an LLM call would add latency, cost, and non-determinism. Worse, when something goes wrong you can debug a rule; you can't really debug "why did the model pick push here?" without an expensive eval harness.
+**Channel selection is rules, not LLM.** "Should this go to email or push?" is deterministic. It depends on cohort recency, 30-day email engagement, and value tier. Making it an LLM call would add latency, cost, and non-determinism. Worse, when something goes wrong you can debug a rule; you can't really debug "why did the model pick push here?" without an expensive eval harness.
 
-**Every LLM-generated SQL goes through a validator.** SELECT-only, allowlisted tables, ≤1 GB scan, must include the outcome column. If validation fails, a template library takes over. LLM-generated SQL is one of the most demo-killing failure modes — a runaway scan or an accidental mutation could cost real money and leak data. The agent should never crash because Gemini wrote bad SQL.
+**Every LLM-generated SQL goes through a validator.** SELECT-only, allowlisted tables, ≤1 GB scan, must include the outcome column. If validation fails, a template library takes over. LLM-generated SQL is one of the most demo-killing failure modes. A runaway scan or an accidental mutation could cost real money and leak data. The agent should never crash because Gemini wrote bad SQL.
 
 **Mocked destination APIs with real payloads.** Braze, OneSignal, Meta Ads, and Salesforce calls write a realistic JSON request to local logs and return a fake ID. The demo's value is the agent's behavior, not whether Braze actually sends. This also lets me build the full agent flow without standing up five trial accounts.
 

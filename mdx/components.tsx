@@ -1,6 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import type { ImgHTMLAttributes, AnchorHTMLAttributes } from "react";
 import CanvaEmbed from "@/components/CanvaEmbed";
+import Video from "@/components/Video";
 import { asset } from "@/lib/asset";
 
 export const mdxComponents: MDXComponents = {
@@ -86,6 +87,7 @@ export const mdxComponents: MDXComponents = {
     />
   ),
   CanvaEmbed,
+  Video,
   img: ({ src, alt }: ImgHTMLAttributes<HTMLImageElement>) => {
     const source = typeof src === "string" ? src : "";
     if (!source) return null;

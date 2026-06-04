@@ -1,12 +1,12 @@
 ---
 title: "Multi-Agent Equity Analysis System"
 slug: "multi-agent-equity-analysis"
-summary: "A multi-agent system for US equity analysis — combining technical, fundamentals, and risk reasoning under one orchestrated pipeline. Built while learning to trade."
+summary: "A multi-agent system for US equity analysis that combines technical, fundamentals, and risk reasoning under one orchestrated pipeline. Built while learning to trade."
 role: "Personal Project"
 year: 2026
 stack: ["Python", "LangGraph", "yfinance", "SEC EDGAR"]
 cover: "/projects/_placeholder.svg"
-coverAlt: "Multi-Agent Equity Analysis System — cover forthcoming"
+coverAlt: "Multi-Agent Equity Analysis System: cover forthcoming"
 order: 10
 category: "side"
 draft: false
@@ -14,9 +14,9 @@ draft: false
 
 ## Why I'm building this
 
-I read about multi-agent trading systems a lot — the kind that break an investment decision into specialised reasoning steps instead of asking one model to handle the whole thing. After enough reading, I wanted to try one myself.
+I read about multi-agent trading systems a lot. The kind that break an investment decision into specialised reasoning steps instead of asking one model to handle the whole thing. After enough reading, I wanted to try one myself.
 
-There is a second, more honest motivation: I am also learning how to trade. Writing the system out is the fastest way to force myself to understand what a real investment decision actually requires. You cannot write a Fundamentals Quality sub-agent without first deciding what "quality" *means* to you — and that decision turns out to be most of the work.
+There is a second, more honest motivation: I am also learning how to trade. Writing the system out is the fastest way to force myself to understand what a real investment decision actually requires. You cannot write a Fundamentals Quality sub-agent without first deciding what "quality" *means* to you, and that decision turns out to be most of the work.
 
 This is very much a work in progress.
 
@@ -24,21 +24,21 @@ This is very much a work in progress.
 
 ## What I'm building
 
-A multi-agent system that analyses US equities and produces structured investment recommendations — *action, conviction, position size, entry, stop, and target* — by combining technical analysis, fundamentals research, and risk assessment under one orchestrated pipeline.
+A multi-agent system that analyses US equities and produces structured investment recommendations (*action, conviction, position size, entry, stop, and target*) by combining technical analysis, fundamentals research, and risk assessment under one orchestrated pipeline.
 
 The system runs three top-level agents in parallel:
 
-- **Price Coordinator** — trend, momentum, patterns, volume
-- **Fundamentals Coordinator** — six specialist sub-agents covering valuation, quality, growth, financial health, capital allocation, and moat
-- **Risk Agent** — volatility, drawdown, position sizing
+- **Price Coordinator** for trend, momentum, patterns, and volume
+- **Fundamentals Coordinator** with six specialist sub-agents covering valuation, quality, growth, financial health, capital allocation, and moat
+- **Risk Agent** for volatility, drawdown, and position sizing
 
 A **Synthesis Agent** aggregates their outputs into a single decision with explicit veto and gating logic.
 
-LangGraph orchestrates the whole workflow as subgraphs with shared state — parallel execution, conditional routing, and a clean upgrade path from deterministic Python nodes to LLM-powered ones.
+LangGraph orchestrates the whole workflow as subgraphs with shared state, supporting parallel execution, conditional routing, and a clean upgrade path from deterministic Python nodes to LLM-powered ones.
 
 ## Design choices worth highlighting
 
-**Specialisation over generalism.** Splitting Fundamentals into six sub-agents (rather than one monolithic agent) makes reasoning auditable — when a call goes wrong, I can trace which sub-agent led the system astray. Same logic for splitting the Price agent into Trend, Momentum, Pattern, and Volume sub-agents, mapped to John Murphy's *Technical Analysis of the Financial Markets* framework.
+**Specialisation over generalism.** Splitting Fundamentals into six sub-agents (rather than one monolithic agent) makes reasoning auditable. When a call goes wrong, I can trace which sub-agent led the system astray. Same logic for splitting the Price agent into Trend, Momentum, Pattern, and Volume sub-agents, mapped to John Murphy's *Technical Analysis of the Financial Markets* framework.
 
 **Hard vetoes and soft gates.** The Financial Health sub-agent can veto the entire recommendation if solvency metrics flag danger. The Trend sub-agent can gate the action to HOLD even on strong fundamentals if all timeframes are in downtrend. These prevent the two most common beginner failure modes: buying cheap dying companies, and catching falling knives.
 
@@ -46,8 +46,8 @@ LangGraph orchestrates the whole workflow as subgraphs with shared state — par
 
 ## What I'm learning
 
-Two things in parallel — how to architect a system where the *seams* between agents carry as much meaning as the agents themselves, and how to read a balance sheet without flinching. The build is forcing me to put words to ideas I have been reading about for months. That alone has been worth it.
+Two things in parallel. How to architect a system where the *seams* between agents carry as much meaning as the agents themselves, and how to read a balance sheet without flinching. The build is forcing me to put words to ideas I have been reading about for months. That alone has been worth it.
 
 ## Reading alongside
 
-I am currently working through John J. Murphy's *Technical Analysis of the Financial Markets* — the textbook the Price sub-agents are modelled on. Trend, momentum, pattern, and volume each get their own chapter, and the agent structure mirrors that almost one-to-one. Easier to design the seams when the source is open on the desk.
+I am currently working through John J. Murphy's *Technical Analysis of the Financial Markets*, the textbook the Price sub-agents are modelled on. Trend, momentum, pattern, and volume each get their own chapter, and the agent structure mirrors that almost one-to-one. Easier to design the seams when the source is open on the desk.

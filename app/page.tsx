@@ -10,14 +10,14 @@ import { getAllProjects } from "@/lib/content";
 
 const EXPERIENCE: ExperienceItem[] = [
   {
-    year: "Jul — Sep 2025",
+    year: "Jul to Sep 2025",
     role: "AI Engineer Intern",
     org: "FPT Software",
     blurb:
       "Built a defect-detection system for automotive QA inspection, identifying multiple defect types and supporting 70% faster, more consistent inspections. Designed a real-time decision-support dashboard for QA stakeholders. Optimised inference pipelines to 45ms per frame for low-latency, edge-compatible deployment.",
   },
   {
-    year: "Aug — Dec 2024",
+    year: "Aug to Dec 2024",
     role: "AI Automation Engineer Intern",
     org: "CyberG7 Technologies",
     blurb:
@@ -27,7 +27,7 @@ const EXPERIENCE: ExperienceItem[] = [
 
 const EDUCATION: ExperienceItem[] = [
   {
-    year: "Sep 2022 — Present",
+    year: "Sep 2022 to Present",
     role: "Bachelor of Science (Honours)",
     org: "Singapore University of Technology and Design",
     blurb:
@@ -160,7 +160,7 @@ export default async function HomePage() {
           Want to make something together?
         </p>
         <p className="mt-6 max-w-[55ch] text-[15px] leading-[1.65] text-ink-soft">
-          Always open to a chat. Best by email — internships, collaborations,
+          Always open to a chat. Best by email. Internships, collaborations,
           or just hello.
         </p>
         <div className="mt-10 flex flex-wrap items-baseline gap-x-4 gap-y-2 text-[12px] uppercase tracking-[0.22em] text-ink-soft">

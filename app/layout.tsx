@@ -31,11 +31,11 @@ export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: "Wan Wei · AI Engineer in training", template: "%s · Wan Wei" },
   description:
-    "Lee Wan Wei — AI engineer in training at SUTD. Computer vision, RAG, full-stack systems.",
+    "Lee Wan Wei. AI engineer in training at SUTD. Computer vision, RAG, full-stack systems.",
   openGraph: {
     title: "Wan Wei",
     description:
-      "AI engineer in training at SUTD — building careful systems where vision, language, and full-stack meet.",
+      "AI engineer in training at SUTD, building careful systems where vision, language, and full-stack meet.",
     type: "website",
   },
   twitter: {

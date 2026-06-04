@@ -5,8 +5,8 @@ summary: "A full-stack AI training simulator that lets customer service teams pr
 role: "AI Engineer & Full-stack Developer"
 year: 2025
 stack: ["Python", "FastAPI", "RAG", "LLM", "React"]
-cover: "/projects/_placeholder.svg"
-coverAlt: "AI Text Training Simulator — cover forthcoming"
+cover: "/projects/textus.jpg"
+coverAlt: "AI Text Training Simulator: CPF customer service training interface"
 order: 2
 category: "school"
 draft: false
@@ -21,10 +21,25 @@ Customer service at CPF has moved from inquiry forms to live chat, which means n
 - A LangGraph conversation engine that runs each interaction as a stateful directed graph with checkpoint-based resumption, so sessions can pause, branch, and replay without losing context
 - RAG pipelines over 1,000+ CPF policy questions, enriching GPT-4o responses with Gemini embeddings so the AI customers stay grounded in real documentation rather than hallucinating
 - Rubric-based evaluation scoring sessions on tone, accuracy, and comprehension, with results feeding back into trainee dashboards as structured performance data rather than vague feedback
-Stack: Next.js, Tailwind, Shadcn UI, WebSockets on the frontend; FastAPI, async SQLModel, PostgreSQL, JWT auth on the backend; Docker on Render
+Stack: Next.js, Tailwind, Shadcn UI, WebSockets on the frontend; FastAPI, async SQLModel, PostgreSQL, JWT auth on the backend; Docker on Render.
+
+## My contribution: the RAG layer
+
+I owned the Retrieval-Augmented Generation component. The decisions that ended up mattering most were specific rather than fashionable:
+
+- **ChromaDB** for the vector store, over a graph or relational alternative. The FAQ corpus was flat enough that vector similarity carried the work, and a graph schema would have invented structure the data did not have.
+- **Switched from SentenceTransformerEmbeddings to GoogleGenerativeAIEmbeddings** once it became clear the SentenceTransformer baseline kept producing near-duplicate retrievals for paraphrased policy questions. Google's embeddings separated the semantic clusters cleanly enough for the downstream Evaluator to score reliably.
+- **Maximum Marginal Relevance** for retrieval, balancing pure semantic similarity against redundancy. The earlier setup kept returning three near-identical chunks of the same FAQ; MMR forced diversity in the context window so the LLM had something to actually synthesise rather than parrot.
+
+The earliest versions truncated their outputs or echoed the user's query back at them. Debugging those failures forced me to interrogate the embedding and retrieval pipeline more carefully than I had ever needed to before. I came into the project having only used RAG once during an internship, and left able to construct and justify one end to end.
 
 ## What I learned
 
-Most important lesson i have takeaway from this project is that treating each chat as a resumable graph opened up scenarios (pausing, branching, replaying for evaluation)  would have been painful with a simpler architecture
-and the evaluation layer matters as much as the retrieval layer. Rubric scoring closes the feedback loop and turns a sandbox into an actual training tool
+The most consequential lesson was that building an AI system is not a contest to deploy the most sophisticated model available. It is an exercise in matching architectural choices to context. Every meaningful RAG decision I made (ChromaDB over a graph store, Google embeddings over SentenceTransformer, MMR over plain similarity) was driven by what the FAQ dataset, the downstream Evaluator, and CPF's data-privacy posture actually required, not by what was technically impressive. The fashionable choice and the right choice were rarely the same.
+
+Equally formative was the conceptual reframing that a consultation with my professor prompted. I had initially struggled to locate the "system" in our project; it felt closer to a Service Design Studio exercise than a technical systems one. The realisation that *a system inheres in any setup* recast the entire project for me. I came to see the CCU, the AI Customer, the Evaluator, and the Team Lead as interacting decision-making agents in an Agent-Based Simulation, where the behaviour of one propagates through the others. This mirrored my earlier DBS Account Application project, where diverse customer profiles and behaviours (incorrect entries, mid-process drop-offs, language barriers) shaped overall system performance. Recognising that systems exist everywhere has become a durable lens rather than a one-off insight.
+
+Taken together, the technical and conceptual strands reinforced one another. The interdependence between my RAG component and my teammate's Evaluator, which could not progress until my function returned reliable, scorable output, made the systems perspective concrete rather than abstract. A delay in one agent immediately constrained another.
+
+> Two smaller lessons from the same project: treating each chat as a resumable graph (LangGraph) opened up pausing, branching, and replay scenarios that would have been painful with a simpler architecture. And the evaluation layer mattered as much as the retrieval one. Rubric scoring is what closes the feedback loop and turns a sandbox into an actual training tool.
 
