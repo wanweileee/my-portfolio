@@ -2,7 +2,7 @@ import HeroIntro from "@/components/HeroIntro";
 import SectionHeader from "@/components/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
 import ExperienceList, { type ExperienceItem } from "@/components/ExperienceList";
-import StackParagraph from "@/components/StackParagraph";
+import StackDraggable from "@/components/StackDraggable";
 import Marker from "@/components/Marker";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
@@ -33,23 +33,6 @@ const EDUCATION: ExperienceItem[] = [
     blurb:
       "Design and Artificial Intelligence , Minor in Computer Science",
   },
-];
-
-const STACK = [
-  "Python",
-  "PyTorch",
-  "TensorFlow",
-  "scikit-learn",
-  "YOLOv8",
-  "OpenCV",
-  "RAG",
-  "LLM",
-  "FastAPI",
-  "Flask",
-  "Ruby on Rails",
-  "React",
-  "Next.js",
-  "Tailwind CSS",
 ];
 
 function Section({
@@ -147,7 +130,7 @@ export default async function HomePage() {
       </Section>
 
       <Section id="stack" n="04" label="Stack">
-        <StackParagraph items={STACK} />
+        <StackDraggable />
         <p className="mt-8 max-w-[60ch] text-[15px] leading-[1.6] text-ink-soft">
           A working set. ML &amp; data on Python, full-stack on JS / Ruby, plus
           the libraries I reach for when the problem turns into a research

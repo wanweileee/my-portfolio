@@ -117,7 +117,7 @@ export default function Notebook() {
             className="mt-1 font-hand text-ink-soft"
             style={{ fontSize: "clamp(16px, 1.8vw, 22px)" }}
           >
-            Open to roles : AI Engineer / Tech Consultant / Product Manager
+            Open to job opportunities
           </p>
 
           {/* MIDDLE: main tagline */}

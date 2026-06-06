@@ -178,7 +178,7 @@ export default function StickerHero() {
             Building careful systems where <em>vision</em>, <em>language</em> &amp; <em>software</em> meet.
           </h1>
           <p className={styles.subline}>
-            Open to roles: AI&nbsp;Engineer · Tech&nbsp;Consultant · Product&nbsp;Manager. Based in Singapore, GMT&nbsp;+8.
+            Open to job opportunities. Based in Singapore, GMT&nbsp;+8.
           </p>
           <div className={styles.cta}>
             <a className={`${styles.btn} ${styles.btnPrimary}`} href={`mailto:${CONTENT.email}`}>Say hello →</a>
