@@ -1,0 +1,24 @@
+---
+title: "Agents Are Systems, Not Prompts"
+slug: "agents-are-systems-not-prompts"
+date: "2026-06-06"
+summary: "Some thoughts from learning how AI agents actually get built. The hard part isn't the prompt. It's the system you build around the model."
+tags: ["ai", "agents"]
+draft: false
+---
+
+When I first started looking into AI agents, I thought the hard part was the prompt, basically finding the right way to talk to the model. The more I dug in, the more I realised that's not really where the work is. Building an agent is systems engineering.
+
+## What an agent actually is
+
+An agent isn't just a model with a clever prompt. It's a system: a loop that keeps calling the model, the tools it can use, the memory it carries between steps, the guardrails that tell it when to stop, and the tracing so you can actually see what it did. That's architecture. Honestly it feels closer to distributed systems than to writing prompts. And that's the part I find interesting. How the pieces fit together, where they break, and what happens once they start interacting with each other.
+
+## Two ideas that keep coming up
+
+Going down this path, two ideas kept coming up. **Harness engineering**, which is everything you build around the model to turn it into an agent. And **context engineering**, which is about what information you actually put in front of the model at each step.
+
+I'll be honest, I haven't decided which one matters more, and I'm starting to think that's fine. The harness is the whole machine, and it seems to be where reliability comes from when an agent runs for a long time. But context is what the model actually sees, and a lot of failures come down to giving it the wrong information. Some days one feels more important than the other. Right now my answer is "it depends on what you're building," and I'd rather sit with that than pretend I've already figured it out.
+
+## What I'm taking from it
+
+So what I'm taking away is more a way of working than a conclusion: treat the agent as a system, work out which layer the problem is actually in, and stay open to changing my mind as I build more. The things that interest me most about AI right now aren't really about the model. They're about the system you build around it.
